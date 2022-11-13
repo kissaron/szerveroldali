@@ -20,7 +20,7 @@ class LabelFactory extends Factory
             'name'=> fake()->word(),
             'display' => true,
             'color' => fake()->safeHexColor(),
-            #'style' =>fake()->randomElement(Label::$styles),
+            
         ];
     }
 }

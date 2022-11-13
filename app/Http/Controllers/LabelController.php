@@ -52,16 +52,9 @@ class LabelController extends Controller
         $validated = $request->validate([
             'name' => 'required|min:3',
             'color' => 'required',
-            #'display'=> 'nullable'
             ]);
 
-        #$validated['display'] = false;
-        #$validated['color'] =  fake()->safeHexColor();
-        #Label::factory()->create($validated);
 
-     /*   if ($validated['display'] == null){
-            $validated['display'] = false;
-         }*/
 
         $label = new Label();
         $label->name= $validated['name'];
@@ -124,7 +117,6 @@ class LabelController extends Controller
             ]);
 
         
-        #$validated['color'] =  fake()->safeHexColor();
         
 
         $label->name= $validated['name'];

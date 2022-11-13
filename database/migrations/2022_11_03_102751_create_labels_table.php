@@ -19,7 +19,7 @@ return new class extends Migration
             $table->boolean('display')->nullable();
             $table->string('color')->nullable();
             $table->timestamps();
-            #$table->enum('style',Label::$styles);
+           
         });
     }
 

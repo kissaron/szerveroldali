@@ -45,7 +45,6 @@
     <div class="row mt-3">
         <div class="col-12 col-lg-9">
             <div class="row">
-                {{-- TODO: Read posts from DB --}}
             
                 @forelse ($items as $item)
                     <div class="col-12 col-md-6 col-lg-4 mb-3 d-flex align-self-stretch">
@@ -75,14 +74,7 @@
                                     </span>
                                 </p>
 
-                                {{-- TODO: Read post categories from DB 
-                                @foreach ($item->labels as $label)
-                                    <a href="{{route('labels.show',$label)}}" class="text-decoration-none">
-                                        <span class="badge" style="background-color:{{ $label->color }}">{{ $label->name }}</span>
-                                    </a>
-                                @endforeach
---}}
-                                {{-- TODO: Short desc --}}
+
                                 <p class="card-text mt-1">{{\Illuminate\Support\Str::limit($item->description, 50)}}</p>
                             </div>
                             <div class="card-footer">
@@ -115,7 +107,7 @@
                             Labels
                         </div>
                         <div class="card-body">
-                            {{-- TODO: Read categories from DB --}}
+                            
                             @foreach ($labels as $label)
                                 <a href="{{route('labels.show',$label)}}" class="text-decoration-none">
                                     <span class="badge" style="background-color:{{ $label->color }}">{{ $label->name }}</span>
@@ -133,7 +125,7 @@
                         <div class="card-body">
                             <div class="small">
                                 <ul class="fa-ul">
-                                    {{-- TODO: Read stats from DB --}}
+                                  
                                     <li><span class="fa-li"><i class="fas fa-user"></i></span>Users: {{$users_count}}</li>
                                     <li><span class="fa-li"><i class="fas fa-layer-group"></i></span>Labels:: {{$labels->count()}}</li>
                                     <li><span class="fa-li"><i class="fas fa-file-alt"></i></span>Items: {{$items->total()}}</li>

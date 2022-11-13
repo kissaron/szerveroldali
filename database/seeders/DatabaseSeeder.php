@@ -15,7 +15,6 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         //User,Item,Label,Comment letrehozasa
-         //\App\Models\User::factory(10)->create();
 
          $users_count =10;
          $users = collect();

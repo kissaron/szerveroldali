@@ -148,9 +148,7 @@ class ItemController extends Controller
             $image= null;
         }
 
-        /*if ($image != $item->$image && $item->image != null){
-            Storage::disk('public')->delete($item->image);
-        }*/
+
 
    
 

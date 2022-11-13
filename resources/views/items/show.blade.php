@@ -21,18 +21,15 @@
 
     <div class="row justify-content-between">
         <div class="col-12 col-md-8">
-            {{-- TODO: Title --}}
             <h1>{{$item->name}}</h1>
 
     
             <p class="small text-secondary mb-0">
                 <i class="far fa-calendar-alt"></i>
-                {{-- TODO: Date --}}
                 <span>{{$item->obtained}}</span>
             </p>
 
             <div class="mb-2">
-                {{-- TODO: Read post categories from DB --}}
                 @foreach ($item->labels as $label)
                 @if ($label->display)
                 <a href="{{route('labels.show',$label)}}" class="text-decoration-none">
@@ -50,7 +47,6 @@
         <div class="col-12 col-md-4">
             <div class="float-lg-end">
 
-                {{-- TODO: Links, policy --}}
                 @can('update',$item)
                 <a role="button" class="btn btn-sm btn-primary" href="{{route('items.edit',$item)}}">
                 <i class="far fa-edit"></i> Edit item</a>
@@ -73,7 +69,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    {{-- TODO: Title --}}
+                 
                     Are you sure you want to delete item <strong>{{$item->name}}</strong>?
                 </div>
                 <div class="modal-footer">
@@ -86,7 +82,6 @@
                         Yes, delete this item
                     </button>
 
-                    {{-- TODO: Route, directives --}}
                     <form id="delete-post-form" action="{{route('items.destroy',$item)}}" method="POST" class="d-none">
                         @method('DELETE')
                         @csrf
@@ -98,7 +93,7 @@
 
     <img
         id="cover_preview_image"
-        {{-- TODO: Cover --}}
+        
         src="{{ asset(
             $item->image
             ?  'storage/' . $item->image
